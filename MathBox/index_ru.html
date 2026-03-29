@@ -1,0 +1,152 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Примеры MathBox | MathBox Examples</title>
+<link rel=stylesheet href="index.css"/>
+</head>
+<body>
+
+<div class="bigTitle">Примеры MathBox | MathBox Examples</div>
+<hr>
+Эта веб-страница содержит коллекцию интерактивных математических визуализаций, созданных с использованием
+<a class="toc" href="https://gitgud.io/unconed/mathbox">MathBox</a>: библиотеки для рендеринга математических диаграмм презентационного качества в браузере с использованием WebGL, построенной на основе <a class="toc" href="https://github.com/mrdoob/three.js/">Three.js</a>
+и ShaderGraph. В большинстве примеров также используется <a class="toc" href="http://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage">dat.gui</a> для пользовательского интерфейса.
+<br/><br/>
+This webpage contains a collection of interactive mathematical visualizations built using 
+<a class="toc" href="https://gitgud.io/unconed/mathbox">MathBox</a>: a library for rendering presentation-quality math diagrams in a browser using WebGL, built on top of <a class="toc" href="https://github.com/mrdoob/three.js/">Three.js</a>
+and ShaderGraph. Most examples also utilize <a class="toc" href="http://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage">dat.gui</a> for the user interface.
+<hr>
+Эта коллекция размещена на <a class="toc" href="https://github.com/stemkoski/stemkoski.github.com">GitHub</a>.
+
+<br/><br/>This collection is hosted at <a class="toc" href="https://github.com/stemkoski/stemkoski.github.com">GitHub</a>.
+<hr>
+Последнее обновление: 18 июня 2016 г.
+<br/><br/>Last updated: 18 June 2016.
+
+<hr>
+
+<br/><br/>
+<div class="fancy">
+<a href="graph2d-hello_ru.html" target="_blank">
+<img src="html-images/2d-hello.png" class="superImage" />
+<br/>Введение в MathBox | MathBox Introduction</a>
+<p class ="superText"> Показывает, как построить график двумерной функции <i>y = f(x)</i> в MathBox.
+<br/><br/>Illustrates how to create a graph of a 2D function <i>y = f(x)</i> in MathBox.
+</p>
+</div>
+
+<br/><br/>
+<div class="fancy">
+<a href="dat-gui-demo_ru.html" target="_blank">
+<img src="html-images/dat-gui.png" class="superImage" />
+<br/>Демонстрация dat.gui | dat.gui Demo</a>
+<p class ="superText"> Показывает, как настроить различные типы данных с помощью dat.gui: числа, ползунки чисел, текст, логические значения, цвета, списки, функции и папки.
+<br/><br/>Illustrates how to set up the different data types using dat.gui: numbers, number sliders, text, booleans, colors, lists, functions, and folders.
+</p>
+</div>
+
+<br/><br/>
+<div class="fancy">
+<a href="graph2d-gui_ru.html" target="_blank">
+<img src="html-images/2d-gui.png" class="superImage" />
+<br/>Интеграция MathBox с dat.gui | Integrating MathBox with dat.gui</a>
+<p class ="superText"> График двумерной функции <i>y = f(x)</i>. Новые возможности:
+<br/><br/>Graph of a 2D function <i>y = f(x)</i>. New features: 
+<blockquote>
+<ul>
+<li> интеграция с dat.gui
+<br/>integration with dat.gui </li>
+<li> функцию можно ввести через текстовое поле; формула анализируется с помощью <a class="toc" href="https://silentmatt.com/javascript-expression-evaluator/">оценщика выражений JavaScript от Silent Matt</a>
+<br/>function may be entered via text box; formula parsed via <a class="toc" href="https://silentmatt.com/javascript-expression-evaluator/">Silent Matt's JavaScript Expression Evaluator</a> </li>
+<li>  регулируемые параметры <i>a</i> и <i>b</i> можно использовать в определении функции
+<br/>adjustable parameters <i>a</i> and <i>b</i> can be used in the function definition</li>
+<li>  оси содержат деления и соответствующие метки
+<br/>axes contain tick marks and corresponding labels </li>
+</ul>
+</blockquote>
+</p>
+</div>
+
+
+
+<br/><br/>
+<div class="fancy">
+<a href="graph2d-basic_ru.html" target="_blank">
+<img src="html-images/2d-basic.png" class="superImage" />
+<br/>График двумерной функции | 2D Function Graph</a>
+<p class ="superText"> График двумерной функции <i>y = f(x)</i>. Новые возможности:
+<br/><br/>Graph of a 2D function <i>y = f(x)</i>. New features: 
+<ul>
+<li> точка трассировки, местоположение которой регулируется ползунком, видимость регулируется текстовым полем, а под точкой трассировки отображается ее координата с точностью до двух десятичных знаков
+<br/>a trace point whose location is controlled by a slider, visibility is controlled by a textbox, and a label below the trace point displays its coordinates to two decimal places </li>
+<li> оси имеют метки, а границы по оси Y могут быть установлены таким образом, чтобы автоматически подстраиваться под минимальное и максимальное значения функции с границами по оси X
+<br/> axes are labelled, and y-bounds can be set to automatically fit themselves according to the minimum and maximum values of the function with the x-bounds.</li>
+</ul>
+</p>
+</div>
+
+ 
+<br/><br/>
+<div class="fancy">
+<a href="graph2d-implicit_ru.html" target="_blank">
+<img src="html-images/2d-implicit.png" class="superImage" />
+<br/>График двумерной неявной кривой | 2D Implicit Curve Graph</a>
+<p class ="superText"> График  двумерной кривой, заданной неявно уравнением <i>f(x,y) = g(x,y)</i>. Использует алгоритм «марширующих квадратов» для аппроксимации кривой. Включает в себя множество предустановленных уравнений.
+<br/><br/>Graph of a 2D curve defined implicitly by <i>f(x,y) = g(x,y)</i>. Uses the marching squares algorithm to approximate the curve. Includes a variety of preset equations.
+</p>
+</div>
+ 
+<br/><br/>
+<div class="fancy">
+<a href="graph3d-basic_ru.html" target="_blank">
+<img src="html-images/3d-basic.png" class="superImage" />
+<br/>График трехмерной функции | 3D Function Graph</a>
+<p class ="superText"> График трехмерной функции <i>z = f(x, y)</i>. Включает регулируемые параметры, различные цветовые схемы, а также опциональную каркасную модель и затенение.
+<br/><br/>Graph of a 3D function <i>z = f(x, y)</i>. Includes adjustable parameters, various color schemes, and optional wireframe and shading.
+</p>
+</div>
+ 
+
+<br/><br/>
+<div class="fancy">
+<a href="graph3d-deriv_ru.html" target="_blank">
+<img src="html-images/3d-deriv.png" class="superImage" />
+<br/>Производные в 3D | 3D Derivatives</a>
+<p class ="superText">График 3D-функции <i>z = f(x,y)</i>. Координаты точки вводятся в виде текста. Включает необязательные графики частных производных по x и y, касательной плоскости, производных по направлению и градиента в заданной точке.
+<br/><br/>Graph of a 3D function <i>z = f(x,y)</i>. Coordinates of a point entered as text. Includes optional graphs of x- and y- partial derivatives, tangent plane, directional derivatives, and the gradient at the given point.
+</p>
+</div>
+ 
+<br/><br/>
+<div class="fancy">
+<a href="graph3d-surface_ru.html" target="_blank">
+<img src="html-images/3d-surface.png" class="superImage" />
+<br/>Поверхности в 3D | Surfaces in 3D</a>
+<p class ="superText">График 2D-поверхности <i>(x,y,z) = (f(u,v), g(u,v), h(u,v))</i> в 3D.
+<br/><br/>Graph of a 2D surface <i>(x,y,z) = (f(u,v), g(u,v), h(u,v))</i> in 3D.
+</p>
+</div>
+ 
+
+<br/><br/>
+<div class="fancy">
+<a href="graph3d-curve_ru.html" target="_blank">
+<img src="html-images/3d-curve.png" class="superImage" />
+<br/>Кривые в 3D | Curves in 3D</a>
+<p class ="superText">График кривой <i>(x,y,z) = (f(t), g(t), h(t))</i> в 3D. Для большей наглядности отображает трубку переменного размера/цвета вокруг кривой.
+<br/><br/>Graph of a curve <i>(x,y,z) = (f(t), g(t), h(t))</i> in 3D. Plots a variable size/color tube around the curve for easier visibility.
+</p>
+</div>
+
+<!--
+<div class="fancy">
+<a name="zzzz"></a>
+<a href="zzzz.html" target="_blank">
+<img src="html-images/zzzz.png" class="superImage" />
+<br/>zzzz</a>
+<p class ="superText"> ... </p>
+</div>
+-->
+
+</body>
+</html>
