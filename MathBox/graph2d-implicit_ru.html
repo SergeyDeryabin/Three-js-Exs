@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MathBox - 2D Grapher</title>
+  <title>MathBox - 2D-график | MathBox - 2D Grapher</title>
   <script src="mathbox-bundle.js"></script>
   <script src="dat.gui.js"></script>
   
@@ -18,7 +18,7 @@
       plugins: ['core', 'controls', 'cursor', 'mathbox'],
       controls: {klass: THREE.OrbitControls}
     });
-    if (mathbox.fallback) throw "WebGL not supported"
+    if (mathbox.fallback) throw "WebGL не поддерживается | WebGL not supported"
 
     var three = mathbox.three;
     three.renderer.setClearColor(new THREE.Color(0xFFFFFF), 1.0);
@@ -169,40 +169,40 @@
 	
 	gui.add( this, 'functionText' ).name('y = f(x) = ').onFinishChange( updateGraphFunc ).listen();
 	
-	var folder0 = gui.addFolder('Parameters');
+	var folder0 = gui.addFolder('Параметры | Parameters');
 	var aGUI = folder0.add( this, 'a' ).min(-3).max(3).step(0.01).name('a = ').onChange( updateGraphFunc );
 	var bGUI = folder0.add( this, 'b' ).min(-3).max(3).step(0.01).name('b = ').onChange( updateGraphFunc );
 	var cGUI = folder0.add( this, 'c' ).min(-3).max(3).step(0.01).name('c = ').onChange( updateGraphFunc );
 	var dGUI = folder0.add( this, 'd' ).min(-3).max(3).step(0.01).name('d = ').onChange( updateGraphFunc );
 	folder0.open();
 	
-	var folderP = gui.addFolder("Preset Equations");
+	var folderP = gui.addFolder("Предварительно заданные уравнения | Preset Equations");
 	folderP.open();
 	
 	var presetFunc1 = function() { functionText = "y = a*x^2 + b*x + c"; aGUI.setValue(1); bGUI.setValue(0); cGUI.setValue(-1); updateGraph(); }
-	var preset1GUI = folderP.add( this, "presetFunc1" ).name("Parabola");
+	var preset1GUI = folderP.add( this, "presetFunc1" ).name("Парабола | Parabola");
 
 	var presetFunc2 = function() { functionText = "a*x^2 + b*y^2 = c^2"; aGUI.setValue(1); bGUI.setValue(1); cGUI.setValue(1); updateGraph(); }
-	var preset2GUI = folderP.add( this, "presetFunc2" ).name("Circle");
+	var preset2GUI = folderP.add( this, "presetFunc2" ).name("Круг | Circle");
 
 	var presetFunc3 = function() { functionText = "a*x^2 + b*y^2 = c^2"; aGUI.setValue(1); bGUI.setValue(2); cGUI.setValue(1); updateGraph(); }
-	var preset3GUI = folderP.add( this, "presetFunc3" ).name("Ellipse");
+	var preset3GUI = folderP.add( this, "presetFunc3" ).name("Эллипс | Ellipse");
 
 	var presetFunc4 = function() { functionText = "a*x^2 + b*y^2 = c^2"; aGUI.setValue(1); bGUI.setValue(-1); cGUI.setValue(1); updateGraph(); }
-	var preset4GUI = folderP.add( this, "presetFunc4" ).name("Hyperbola");
+	var preset4GUI = folderP.add( this, "presetFunc4" ).name("Гипербола | Hyperbola");
 
 	var presetFunc5 = function() { functionText = "y^2 = x^3 + a*x + b"; aGUI.setValue(-1); bGUI.setValue(1); updateGraph(); }
-	var preset5GUI = folderP.add( this, "presetFunc5" ).name("Elliptic Curve");
+	var preset5GUI = folderP.add( this, "presetFunc5" ).name("Эллиптическая кривая | Elliptic Curve");
 	
 	// reference: http://www.maa.org/press/periodicals/convergence/the-nodding-sphere-and-the-birds-beak-dalemberts-dispute-with-euler
 	var presetFunc6 = function() { functionText = "y^4 - x^3 - 4*x^2*y - 2*x*y^2 + x^2 = 0"; updateGraph(); }
-	var preset6GUI = folderP.add( this, "presetFunc6" ).name("The Bird's Beak");
+	var preset6GUI = folderP.add( this, "presetFunc6" ).name("Птичий клюв | The Bird's Beak");
 	
 	// reference: http://www.maa.org/press/periodicals/convergence/when-nine-points-are-worth-but-eight-eulers-resolution-of-cramers-paradox
 	var presetFunc7 = function() { functionText = "y^3 - y = a * (x^3 - x)"; aGUI.setValue(1.25); updateGraph(); }
-	var preset7GUI = folderP.add( this, "presetFunc7" ).name("Euler's&nbspElegant&nbsp;Example");
+	var preset7GUI = folderP.add( this, "presetFunc7" ).name("Элегантный пример Эйлера | Euler's&nbspElegant&nbsp;Example");
 	
-	var folder1 = gui.addFolder('Window Range');
+	var folder1 = gui.addFolder('Диапазон окон | Window Range');
 	var xMinGUI = folder1.add( this, 'xMin' );
 	var xMaxGUI = folder1.add( this, 'xMax' );
 	var yMinGUI = folder1.add( this, 'yMin' );
@@ -210,7 +210,7 @@
 	folder1.close();
 	
 	
-	gui.add( this, 'updateGraph' ).name("Update Graph");
+	gui.add( this, 'updateGraph' ).name("Обновить график | Update Graph");
 	
 	gui.open();
 	
