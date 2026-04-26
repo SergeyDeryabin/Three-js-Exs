@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MathBox - 3D Grapher</title>
+  <title>MathBox — 3D-график | MathBox - 3D Grapher</title>
   <script src="mathbox-bundle.js"></script>
   <script src="dat.gui.js"></script>
   
@@ -18,7 +18,7 @@
       plugins: ['core', 'controls', 'cursor', 'mathbox'],
       controls: {klass: THREE.OrbitControls}
     });
-    if (mathbox.fallback) throw "WebGL not supported"
+    if (mathbox.fallback) throw "WebGL не поддерживается | WebGL not supported"
 
     var three = mathbox.three;
     three.renderer.setClearColor(new THREE.Color(0xFFFFFF), 1.0);
@@ -50,7 +50,7 @@
 		domain.set("range", [[uMin, uMax], [vMin, vMax]]  );
 		
 		// start of color options =============================================
-		if (graphColorStyle == "Solid Blue")
+		if (graphColorStyle == "Чисто синий | Solid Blue")
 		{
 			// just a solid blue color			
 			domainColors.set("expr", 
@@ -60,7 +60,7 @@
 				}
 			);
 		}
-		else if (graphColorStyle == "Red U, Green V")
+		else if (graphColorStyle == "Красный U | Red U, Зеленый V | Green V")
 		{
 			// increased u/v -> increased red/green			
 			domainColors.set("expr", 
@@ -73,7 +73,7 @@
 				}
 			);
 		}
-		else if (graphColorStyle == "Rainbow Along U")
+		else if (graphColorStyle == "Радуга вдоль U | Rainbow Along U")
 		{
 			// 		
 			domainColors.set("expr", 
@@ -86,7 +86,7 @@
 				}
 			);
 		}
-		else if (graphColorStyle == "Rainbow Along V")
+		else if (graphColorStyle == "Радуга вдоль V | Rainbow Along V")
 		{
 			// 		
 			domainColors.set("expr", 
@@ -181,20 +181,20 @@
 	var yFuncGUI = gui.add( this, 'yFunctionText' ).name('y = g(u,v) = ');
 	var zFuncGUI = gui.add( this, 'zFunctionText' ).name('z = h(u,v) = ');
 	
-	var folder0 = gui.addFolder('Parameters');
+	var folder0 = gui.addFolder('Параметры | Parameters');
 	var aGUI = folder0.add( this, 'a' ).min(0).max(5).step(0.01).name('a = ');
 	var bGUI = folder0.add( this, 'b' ).min(0).max(5).step(0.01).name('b = ');
 	folder0.open();
 	
 	
-	var folder2 = gui.addFolder('Parameter Range');
+	var folder2 = gui.addFolder('Диапазон параметров | Parameter Range');
 	var uMinGUI = folder2.add( this, 'uMin' ).onChange( updateGraphFunc );
 	var uMaxGUI = folder2.add( this, 'uMax' ).onChange( updateGraphFunc );
 	var vMinGUI = folder2.add( this, 'vMin' ).onChange( updateGraphFunc );
 	var vMaxGUI = folder2.add( this, 'vMax' ).onChange( updateGraphFunc );
 	folder2.open();
 	
-	var folderP = gui.addFolder("Preset Equations");
+	var folderP = gui.addFolder("Предустановленные уравнения | Preset Equations");
 	folderP.open();
 	
 	var presetFunc1 = function() { 
@@ -203,7 +203,7 @@
 		vMinGUI.setValue(-1); vMaxGUI.setValue(1);
 		updateGraph(); 
 		};
-	var preset1GUI = folderP.add( this, "presetFunc1" ).name("Square");
+	var preset1GUI = folderP.add( this, "presetFunc1" ).name("Квадрат | Square");
 	
 	var presetFunc11 = function() { 
 		xFuncGUI.setValue("1.5 * u - 1.0 * v + 1.0"); yFuncGUI.setValue("1.0 * u + 1.0 * v + 0.5"); zFuncGUI.setValue("1.0 * u + 1.0 * v + 1.0"); 
@@ -211,7 +211,7 @@
 		vMinGUI.setValue(-1); vMaxGUI.setValue(1);
 		updateGraph(); 
 		};
-	var preset11GUI = folderP.add( this, "presetFunc11" ).name("Plane");
+	var preset11GUI = folderP.add( this, "presetFunc11" ).name("Плоскость | Plane");
 	
 	var presetFunc2 = function() { 
 		xFuncGUI.setValue("cos(u)"); yFuncGUI.setValue("sin(u)"); zFuncGUI.setValue("v");
@@ -219,7 +219,7 @@
 		vMinGUI.setValue(-1); vMaxGUI.setValue(1);
 		updateGraph(); 
 		};
-	var preset2GUI = folderP.add( this, "presetFunc2" ).name("Cylinder");
+	var preset2GUI = folderP.add( this, "presetFunc2" ).name("Цилиндр | Cylinder");
 	
 	var presetFunc3 = function() { 
 		xFuncGUI.setValue("sin(u) * cos(v)"); yFuncGUI.setValue("sin(u) * sin(v)"); zFuncGUI.setValue("cos(u)");
@@ -227,7 +227,7 @@
 		vMinGUI.setValue(0); vMaxGUI.setValue(6.282);
 		updateGraph(); 
 		};
-	var preset3GUI = folderP.add( this, "presetFunc3" ).name("Sphere");
+	var preset3GUI = folderP.add( this, "presetFunc3" ).name("Сфера | Sphere");
 	
 	var presetFunc4 = function() { 
 		xFuncGUI.setValue("u"); yFuncGUI.setValue("0.25 * u^2 * cos(v)"); zFuncGUI.setValue("0.25 * u^2 * sin(v)");
@@ -235,7 +235,7 @@
 		vMinGUI.setValue(3.14/2); vMaxGUI.setValue(6.282 + 3.14/2);
 		updateGraph(); 
 		};
-	var preset4GUI = folderP.add( this, "presetFunc4" ).name("Solid of Revolution");
+	var preset4GUI = folderP.add( this, "presetFunc4" ).name("Тело оборота | Solid of Revolution");
 	
 	var presetFunc5 = function() { 
 		xFuncGUI.setValue("cos(u)*(a + b*cos(v))"); yFuncGUI.setValue("sin(u)*(a + b*cos(v))"); zFuncGUI.setValue("b*sin(v)");
@@ -244,7 +244,7 @@
 		aGUI.setValue(1); bGUI.setValue(0.5);
 		updateGraph(); 
 		};
-	var preset5GUI = folderP.add( this, "presetFunc5" ).name("Torus");
+	var preset5GUI = folderP.add( this, "presetFunc5" ).name("Тор | Torus");
 	
 	var presetFunc6 = function() { 
 		xFuncGUI.setValue("u * cos(v)"); yFuncGUI.setValue("u * sin(v)"); zFuncGUI.setValue("0.5 * v");
@@ -252,7 +252,7 @@
 		vMinGUI.setValue(-3.14); vMaxGUI.setValue(3.14);
 		updateGraph(); 
 		};
-	var preset6GUI = folderP.add( this, "presetFunc6" ).name("Helical");
+	var preset6GUI = folderP.add( this, "presetFunc6" ).name("Cпиральный | Helical");
 	
 	var presetFunc7 = function() { 
 		xFuncGUI.setValue("cos(u)^3 * cos(v)^3"); yFuncGUI.setValue("sin(u)^3 * cos(v)^3"); zFuncGUI.setValue("sin(v)^3");
@@ -260,11 +260,11 @@
 		vMinGUI.setValue(0); vMaxGUI.setValue(6.282);
 		updateGraph(); 
 		};
-	var preset7GUI = folderP.add( this, "presetFunc7" ).name("Astroid");
+	var preset7GUI = folderP.add( this, "presetFunc7" ).name("Астроид | Astroid");
 	
 	
 	
-	var folder1 = gui.addFolder('Window Range');
+	var folder1 = gui.addFolder('Диапазон окон | Window Range');
 	var xMinGUI = folder1.add( this, 'xMin' );
 	var xMaxGUI = folder1.add( this, 'xMax' );
 	var zMinGUI = folder1.add( this, 'zMin' ).name("yMin");
@@ -273,11 +273,11 @@
 	var yMaxGUI = folder1.add( this, 'yMax' ).name("zMax");
 	folder1.close();
 	
-	var graphColorStyle = "Solid Blue";
-	var graphColorStyleList = ["Solid Blue", "Red U, Green V", "Rainbow Along U", "Rainbow Along V"];
-	var graphColorGUI = gui.add( this, "graphColorStyle", graphColorStyleList ).name('Graph style').onChange( updateGraphFunc );
+	var graphColorStyle = "Чисто синий | Solid Blue";
+	var graphColorStyleList = ["Чисто синий | Solid Blue", "Красный U | Red U, Зеленый V | Green V", "Радуга вдоль U | Rainbow Along U", "Радуга вдоль V | Rainbow Along V"];
+	var graphColorGUI = gui.add( this, "graphColorStyle", graphColorStyleList ).name('Стиль графика | Graph style').onChange( updateGraphFunc );
 	
-	gui.add( this, 'updateGraph' ).name("Update Graph");
+	gui.add( this, 'updateGraph' ).name("Обновить график | Update Graph");
 	
 	gui.open();
 	
